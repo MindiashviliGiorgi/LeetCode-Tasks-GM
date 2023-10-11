@@ -96,3 +96,23 @@
 
 //  #5 Two sum
 
+const nums = [2, 7, 11, 15];
+const target = 9;
+// console.log(twoSum(nums, target)); // Output: [1, 2] (indices of elements 2 and 7)
+
+function  twoSum(nums, target) {
+  const numToIndexMap = {};
+
+  for(let i = 0; i < nums.length; i++) {
+    const complement = target - nums[i];
+
+    if(numToIndexMap.hasOwnProperty(complement)) {
+      return [numToIndexMap[complement], i]
+    }
+    numToIndexMap[nums[i]] = i;
+  }
+  return null;
+}
+
+console.log(twoSum(nums, target))
+
