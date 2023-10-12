@@ -96,23 +96,62 @@
 
 //  #5 Two sum
 
-const nums = [2, 7, 11, 15];
-const target = 9;
-// console.log(twoSum(nums, target)); // Output: [1, 2] (indices of elements 2 and 7)
+// const nums = [2, 7, 11, 15];
+// const target = 9;
+// // console.log(twoSum(nums, target)); // Output: [1, 2] (indices of elements 2 and 7)
 
-function  twoSum(nums, target) {
-  const numToIndexMap = {};
+// function  twoSum(nums, target) {
+//   const numToIndexMap = {};
 
-  for(let i = 0; i < nums.length; i++) {
-    const complement = target - nums[i];
+//   for(let i = 0; i < nums.length; i++) {
+//     const complement = target - nums[i];
 
-    if(numToIndexMap.hasOwnProperty(complement)) {
-      return [numToIndexMap[complement], i]
-    }
-    numToIndexMap[nums[i]] = i;
-  }
-  return null;
-}
+//     if(numToIndexMap.hasOwnProperty(complement)) {
+//       return [numToIndexMap[complement], i]
+//     }
+//     numToIndexMap[nums[i]] = i;
+//   }
+//   return null;
+// }
 
-console.log(twoSum(nums, target))
+// console.log(twoSum(nums, target))
 
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// #5  Longest Substring Without Repeating Characters
+
+// console.log(lengthOfLongestSubstring("abcabcbb")); // Output: 3 (the longest substring without repeating characters is "abc")
+// console.log(lengthOfLongestSubstring("bbbbb")); // Output: 1 (the longest substring without repeating characters is "b")
+// console.log(lengthOfLongestSubstring("pwwkew")); // Output: 3 (the longest substring without repeating characters is "wke")
+
+
+
+// // 1 create function
+
+// function lengthOfLongestSubstring(str) {
+//   if(str.length === 0) return 0;
+
+//   let maxLength = 0;
+//   let start = 0;
+//   const charIndexMap = {};
+
+//   for(let i = 0; i < str.length; i++) {
+//     const currentChar = str[i]
+
+//     if(charIndexMap.hasOwnProperty(currentChar) && charIndexMap[currentChar] >= start) {
+//       start = charIndexMap[currentChar] + 1;
+//     }
+//     charIndexMap[currentChar] = i;
+//     maxLength = Math.max(maxLength, i - start + 1)
+//   }
+
+//   return maxLength;
+// }
+
+//////////////////////////////////////////////////////////////////////////////////
+
+// #6 Merge Intervals
+
+const intervals = [[1, 3], [2, 6], [8, 10], [15, 18]];
+console.log(mergeIntervals(intervals));
+// Output: [[1, 6], [8, 10], [15, 18]]
