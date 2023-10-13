@@ -1,4 +1,4 @@
-// #1 reverse String
+// #1 reverse String (easy)
 
 // let str = "Hello, World"; // Output: "!dlroW ,olleH"
 // let str2 = "JavaScript"; // Output: "tpircSavaJ"
@@ -18,7 +18,7 @@
 //////////////////////////////////////////////////////////
 
 
-// #2 Calculate Factorial
+// #2 Calculate Factorial (easy)
 
 // console.log(calculateFactorial(5)); // Output: 120
 // console.log(calculateFactorial(0)); // Output: 1
@@ -40,7 +40,7 @@
 
 //////////////////////////////////////////////////////////
 
-// #3 Palindrome Checker
+// #3 Palindrome Checker (easy)
 
 // console.log(isPalindrome("racecar")); // Output: true
 // console.log(isPalindrome("A man, a plan, a canal, Panama")); // Output: true
@@ -57,7 +57,7 @@
 
 ////////////////////////////////////////////////////////////
 
-// #4 FizzBuzz
+// #4 FizzBuzz (easy)
 
 // fizzBuzz(15);
 // Output:
@@ -94,7 +94,7 @@
 
 ////////////////////////////////////////////////////////////////
 
-//  #5 Two sum
+//  #5 Two sum (medium)
 
 // const nums = [2, 7, 11, 15];
 // const target = 9;
@@ -118,7 +118,7 @@
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-// #5  Longest Substring Without Repeating Characters
+// #6  Longest Substring Without Repeating Characters (medium)
 
 // console.log(lengthOfLongestSubstring("abcabcbb")); // Output: 3 (the longest substring without repeating characters is "abc")
 // console.log(lengthOfLongestSubstring("bbbbb")); // Output: 1 (the longest substring without repeating characters is "b")
@@ -150,8 +150,76 @@
 
 //////////////////////////////////////////////////////////////////////////////////
 
-// #6 Merge Intervals
+// #7 Merge Intervals (medium)
 
-const intervals = [[1, 3], [2, 6], [8, 10], [15, 18]];
-console.log(mergeIntervals(intervals));
-// Output: [[1, 6], [8, 10], [15, 18]]
+// const intervals = [[1, 3], [2, 6], [8, 10], [15, 18]];
+// // console.log(mergeIntervals(intervals));
+// // Output: [[1, 6], [8, 10], [15, 18]]
+
+// function mergeIntervals(intervals) {
+//   if (intervals.length <= 1) {
+//     return intervals;
+//   }
+
+//   intervals.sort((a, b) => a[0] - b[0]);
+//   const merged = [intervals[0]];
+
+//   for (let i = 1; i < intervals.length; i++) {
+//     const currentInterval = intervals[i];
+//     const lastMergedInterval = merged[merged.length - 1];
+
+//     if (currentInterval[0] <= lastMergedInterval[1]) {
+//       lastMergedInterval[1] = Math.max(lastMergedInterval[1], currentInterval[1]);
+//     } else {
+//       merged.push(currentInterval);
+//     }
+//   }
+
+//   return merged;
+// }
+
+// console.log(mergeIntervals(intervals));
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+// #8 Find the Maximum Number in an Array (easy)
+
+// const numbers = [3, 7, 1, 9, 4];
+// console.log(findMax(numbers)); // Output: 9
+
+// function findMax(numbers) {
+//   let maxNumber = numbers[0]
+
+//   for (let i = 1; i < numbers.length; i++) {
+//     if (numbers[i] > maxNumber) {
+//       maxNumber = numbers[i]
+//     }
+//   }
+//   return maxNumber;
+// }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// #9 Count the Number of Words in a String (easy)
+
+// console.log(countWords("Hello, world!")); // Output: 2 (two words: "Hello" and "world")
+// console.log(countWords("This is a simple task.")); // Output: 5 (five words)
+
+// function countWords(str) {
+//   let strCut = str.split(' ')
+//   return strCut.length;
+// }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// #10 Implement a Stack
+
+const stack = new Stack();
+
+stack.push(1);
+stack.push(2);
+stack.push(3);
+
+console.log(stack.pop()); // Output: 3
+console.log(stack.peek()); // Output: 2
+console.log(stack.isEmpty()); // Output: false
