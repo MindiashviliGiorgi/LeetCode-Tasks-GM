@@ -213,13 +213,40 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // #10 Implement a Stack
+// class Stack {
+//   constructor() {
+//     this.items = [];
+//   }
 
-const stack = new Stack();
+//   push(item) {
+//     this.items.push(item)
+//   }
 
-stack.push(1);
-stack.push(2);
-stack.push(3);
+//   pop() {
+//     if (this.isEmpty()) {
+//       return null;
+//     }
+//     return this.items.pop();
+//   }
 
-console.log(stack.pop()); // Output: 3
-console.log(stack.peek()); // Output: 2
-console.log(stack.isEmpty()); // Output: false
+//   peek() {
+//     if(this.isEmpty()) {
+//       return null;
+//     }
+//     return this.items[this.items.length - 1]
+//   }
+
+//   isEmpty() {
+//     return this.items.length === 0;
+//   }
+// }
+
+// const stack = new Stack();
+
+// stack.push(1);
+// stack.push(2);
+// stack.push(3);
+
+// console.log(stack.pop()); // Output: 3
+// console.log(stack.peek()); // Output: 2
+// console.log(stack.isEmpty()); // Output: false
