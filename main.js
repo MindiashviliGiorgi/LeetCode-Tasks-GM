@@ -250,3 +250,44 @@
 // console.log(stack.pop()); // Output: 3
 // console.log(stack.peek()); // Output: 2
 // console.log(stack.isEmpty()); // Output: false
+
+//////////////////////////////////////////////////////////////////////////////////
+
+// #11 Implement a Linked List
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class LinkedList {
+  constructor() {
+    this.head = null;
+  }
+
+  add(value) {
+    // Add a new node to the end of the list.
+  }
+
+  remove(value) {
+    // Remove the first node with the given value from the list.
+  }
+
+  isEmpty() {
+    // Return true if the list is empty, otherwise return false.
+  }
+
+  size() {
+    // Return the number of nodes in the list.
+  }
+
+  search(value) {
+    // Return true if a node with the given value exists in the list, otherwise return false.
+  }
+
+  toArray() {
+    // Return an array containing the values of all nodes in the list in order.
+  }
+}
