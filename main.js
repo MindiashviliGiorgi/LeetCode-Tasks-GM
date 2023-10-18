@@ -304,19 +304,65 @@
 
 // #14 Remove Duplicates from an Array(medium)
 
-console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5])); // Output: [1, 2, 3, 4, 5]
-console.log(removeDuplicates(["apple", "banana", "apple", "cherry"])); // Output: ["apple", "banana", "cherry"]
-console.log(removeDuplicates([])); // Output: []
+// console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5])); // Output: [1, 2, 3, 4, 5]
+// console.log(removeDuplicates(["apple", "banana", "apple", "cherry"])); // Output: ["apple", "banana", "cherry"]
+// console.log(removeDuplicates([])); // Output: []
 
-function removeDuplicates(arr) {
-  const arrObjectMode = {};
-  let newArray = [];
+// function removeDuplicates(arr) {
+//   const arrObjectMode = {};
+//   let newArray = [];
 
-  for (let i = 0; i < arr.length; i++) {
-    if(!arrObjectMode[arr[i]]) {
-      arrObjectMode[arr[i]] = true;
-      newArray.push(arr[i]);
-    }
-  }
-  return newArray;
-}
+//   for (let i = 0; i < arr.length; i++) {
+//     if(!arrObjectMode[arr[i]]) {
+//       arrObjectMode[arr[i]] = true;
+//       newArray.push(arr[i]);
+//     }
+//   }
+//   return newArray;
+// }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+// #15 Implement a Queue
+
+// class Queue {
+//   constructor() {
+//     this.items = [];
+//   }
+
+//   enqueue(element) {
+//     // Add an element to the back of the queue.
+//     this.items.push(element)
+//   }
+
+//   dequeue() {
+//     // Remove and return the element at the front of the queue
+//     const frontElement = this.items.shift();
+//     return frontElement;
+//   }
+
+//   peek() {
+//     // Return the element at the front of the queue without removing it.
+//     return this.items[0]
+//   }
+
+//   isEmpty() {
+//     // Return true if the queue is empty, otherwise return false.
+//     return this.items.length === 0;
+//   }
+
+//   size() {
+//     // Return the number of elements in the queue.
+//     return this.items.length;
+//   }
+// }
+
+// console.log(Queue)
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// #16 Merge Sorted Arrays(medium)
+
+console.log(mergeSortedArrays([1, 3, 5], [2, 4, 6])); // Output: [1, 2, 3, 4, 5, 6]
+console.log(mergeSortedArrays([10, 20, 30], [5, 15, 25])); // Output: [5, 10, 15, 20, 25, 30]
+
