@@ -253,41 +253,70 @@
 
 //////////////////////////////////////////////////////////////////////////////////
 
-// #11 Implement a Linked List
+// #11 Sum of Array Elements(easy)
 
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
-  }
-}
+// console.log(sumArray([1, 2, 3, 4, 5])); // Output: 15
+// console.log(sumArray([10, -5, 7, 3])); // Output: 15
+// console.log(sumArray([])); // Output: 0
 
-class LinkedList {
-  constructor() {
-    this.head = null;
-  }
+// function sumArray(arr) {
+//   let sum = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     sum = sum + arr[i]
+//   }
+//   return sum;
+// }                                                          
 
-  add(value) {
-    // Add a new node to the end of the list.
-  }
+// #12 Factorial Calculator
 
-  remove(value) {
-    // Remove the first node with the given value from the list.
-  }
+// console.log(factorial(5)); // Output: 120 (5! = 5 * 4 * 3 * 2 * 1 = 120)
+// console.log(factorial(0)); // Output: 1 (0! is defined as 1)
+// console.log(factorial(10)); // Output: 3628800 (10! = 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 = 3628800)
 
-  isEmpty() {
-    // Return true if the list is empty, otherwise return false.
-  }
 
-  size() {
-    // Return the number of nodes in the list.
-  }
+// function factorial(x) {
+//   if(x === 0 || x === 1) {
+//     return 1;
+//   } else {
+//     return x * factorial(x - 1)
+//   }
+// }
 
-  search(value) {
-    // Return true if a node with the given value exists in the list, otherwise return false.
-  }
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  toArray() {
-    // Return an array containing the values of all nodes in the list in order.
+// #13 Find the Largest Element in an Array(easy)
+
+// console.log(findLargestElement([5, 8, 2, 10, 3])); // Output: 10
+// console.log(findLargestElement([1, 0, -1, -5, -2])); // Output: 1
+// console.log(findLargestElement([42, 42, 42, 42])); // Output: 42
+
+// function findLargestElement(arr) {
+//   let maxNumber = arr[0];
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] > maxNumber) {
+//       maxNumber = arr[i]
+//     }
+//   }
+//   return maxNumber;
+// }
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+// #14 Remove Duplicates from an Array(medium)
+
+console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5])); // Output: [1, 2, 3, 4, 5]
+console.log(removeDuplicates(["apple", "banana", "apple", "cherry"])); // Output: ["apple", "banana", "cherry"]
+console.log(removeDuplicates([])); // Output: []
+
+function removeDuplicates(arr) {
+  const arrObjectMode = {};
+  let newArray = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if(!arrObjectMode[arr[i]]) {
+      arrObjectMode[arr[i]] = true;
+      newArray.push(arr[i]);
+    }
   }
+  return newArray;
 }
