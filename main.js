@@ -363,6 +363,58 @@
 
 // #16 Merge Sorted Arrays(medium)
 
-console.log(mergeSortedArrays([1, 3, 5], [2, 4, 6])); // Output: [1, 2, 3, 4, 5, 6]
-console.log(mergeSortedArrays([10, 20, 30], [5, 15, 25])); // Output: [5, 10, 15, 20, 25, 30]
+// console.log(mergeSortedArrays([1, 3, 5], [2, 4, 6])); // Output: [1, 2, 3, 4, 5, 6]
+// console.log(mergeSortedArrays([10, 20, 30], [5, 15, 25])); // Output: [5, 10, 15, 20, 25, 30]
 
+// function mergeSortedArrays(arr1, arr2) {
+//   let merged = [];
+//   let index1 = 0;
+//   let index2 = 0;
+
+//   while (index1 < arr1.length && index2 < arr2.length) {
+//     if (arr1[index1] < arr2[index2]) {
+//       merged.push(arr1[index1])
+//       index1++;
+//     } else {
+//       merged.push(arr2[index2])
+//       index2++;
+//     }
+//   }
+//   return merged;
+// }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// #17 Find the Smallest Element in an Array(easy)
+
+// console.log(findSmallestElement([5, 8, 2, 10, 3])); // Output: 2
+// console.log(findSmallestElement([1, 0, -1, -5, -2])); // Output: -5
+// console.log(findSmallestElement([42, 42, 42, 42])); // Output: 42
+
+// function findSmallestElement(arr) {
+//   let smallestElement = arr[0];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (smallestElement > arr[i]) {
+//       smallestElement = arr[i]
+//     }
+//   }
+//   return smallestElement
+// }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+// #18 Count the Occurrences of a Specific Element in an Array(easy)
+
+// console.log(countOccurrences([1, 2, 3, 4, 2, 5, 2], 2)); // Output: 3 (2 appears 3 times)
+// console.log(countOccurrences(["apple", "banana", "apple", "cherry"], "apple")); // Output: 2 ("apple" appears 2 times)
+// console.log(countOccurrences([1, 2, 3, 4, 5], 6)); // Output: 0 (6 does not appear in the array)
+
+// function countOccurrences(arr, value) {
+//   let count = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] === value) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
