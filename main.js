@@ -418,3 +418,111 @@
 //   }
 //   return count;
 // }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// #19 Reverse Words in a String(easy)
+
+// console.log(reverseWords("Hello, World")); // Output: "World Hello,"
+// console.log(reverseWords("JavaScript is fun")); // Output: "fun is JavaScript"
+// console.log(reverseWords("Coding is awesome!")); // Output: "awesome! is Coding"
+
+// function reverseWords(str) {
+//   str = str.split(' ').reverse().join(' ')
+//   return str
+// }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// #20 Implement a Linked List
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class LinkedList {
+  constructor() {
+    this.head = null;
+  }
+
+  append(value) {
+    const newNode = new Node(value);
+    if (!this.head) {
+      this.head = newNode;
+    } else {
+      let current = this.head;
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = newNode;
+    }
+  }
+
+  prepend(value) {
+    const newNode = new Node(value);
+    newNode.next = this.head;
+    this.head = newNode;
+  }
+
+  delete(value) {
+    if (!this.head) {
+      return;
+    }
+    if (this.head.value === value) {
+      this.head = this.head.next;
+      return;
+    }
+    let current = this.head;
+    while (current.next) {
+      if (current.next.value === value) {
+        current.next = current.next.next;
+        return;
+      }
+      current = current.next;
+    }
+  }
+
+  find(value) {
+    let current = this.head;
+    while (current) {
+      if (current.value === value) {
+        return current;
+      }
+      current = current.next;
+    }
+    return null;
+  }
+
+  toArray() {
+    const result = [];
+    let current = this.head;
+    while (current) {
+      result.push(current.value);
+      current = current.next;
+    }
+    return result;
+  }
+
+  size() {
+    let count = 0;
+    let current = this.head;
+    while (current) {
+      count++;
+      current = current.next;
+    }
+    return count;
+  }
+}
+
+// Example usage:
+const list = new LinkedList();
+list.append(1);
+list.append(2);
+list.prepend(0);
+list.append(3);
+list.delete(2);
+console.log(list.toArray()); // Output: [0, 1, 3]
+console.log(list.size());   // Output: 3
