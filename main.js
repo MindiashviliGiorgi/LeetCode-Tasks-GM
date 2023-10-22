@@ -434,95 +434,150 @@
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// #20 Implement a Linked List
+// #20 Implement a Linked List(medium)
 
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
+// class Node {
+//   constructor(value) {
+//     this.value = value;
+//     this.next = null;
+//   }
+// }
+
+// class LinkedList {
+//   constructor() {
+//     this.head = null;
+//   }
+
+//   append(value) {
+//     const newNode = new Node(value);
+//     if (!this.head) {
+//       this.head = newNode;
+//     } else {
+//       let current = this.head;
+//       while (current.next) {
+//         current = current.next;
+//       }
+//       current.next = newNode;
+//     }
+//   }
+
+//   prepend(value) {
+//     const newNode = new Node(value);
+//     newNode.next = this.head;
+//     this.head = newNode;
+//   }
+
+//   delete(value) {
+//     if (!this.head) {
+//       return;
+//     }
+//     if (this.head.value === value) {
+//       this.head = this.head.next;
+//       return;
+//     }
+//     let current = this.head;
+//     while (current.next) {
+//       if (current.next.value === value) {
+//         current.next = current.next.next;
+//         return;
+//       }
+//       current = current.next;
+//     }
+//   }
+
+//   find(value) {
+//     let current = this.head;
+//     while (current) {
+//       if (current.value === value) {
+//         return current;
+//       }
+//       current = current.next;
+//     }
+//     return null;
+//   }
+
+//   toArray() {
+//     const result = [];
+//     let current = this.head;
+//     while (current) {
+//       result.push(current.value);
+//       current = current.next;
+//     }
+//     return result;
+//   }
+
+//   size() {
+//     let count = 0;
+//     let current = this.head;
+//     while (current) {
+//       count++;
+//       current = current.next;
+//     }
+//     return count;
+//   }
+// }
+
+// const list = new LinkedList();
+// list.append(1);
+// list.append(2);
+// list.prepend(0);
+// list.append(3);
+// list.delete(2);
+// console.log(list.toArray()); // Output: [0, 1, 3]
+// console.log(list.size());   // Output: 3
+
+
+/////////////////////////////////////////////////////////////////////////
+
+// #21 Reverse Words in a String
+
+// const str = "Hello, World";
+// console.log(reverseWords(str)); // Output: "World Hello,"
+
+// function reverseWords(str) {
+//   str = str.split(' ').reverse().join(' ');
+//   return str
+// }
+
+////////////////////////////////////////////////////////////////////////////
+
+// #22 Anagram Check(medium)
+
+console.log(areAnagrams("listen", "silent")); // Output: true
+console.log(areAnagrams("hello", "world"));   // Output: false
+
+function areAnagrams(str, str2) {
+  // create two empty object for strings
+  let strObject = {};
+  let strObject2 = {};
+
+
+  // function to populate the character count objects
+  function populateCharCount(str, strObject) {
+    for (let char of str) {
+      char = char.toLowerCase();
+      if (char !== ' ') {
+        strObject[char] = (strObject[char] || 0) + 1;
+      }
+    }
   }
+
+  // Populate character count objects for strings
+  populateCharCount(str, strObject);
+  populateCharCount(str2, strObject2);
+
+  // check objects if have same properties
+  for (let char in strObject) {
+    if (strObject.hasOwnProperty(char) && strObject2.hasOwnProperty(char)) {
+      if (strObject[char] !== strObject2[char]) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+  }
+
+  // one more check if object propertys have same length
+  return Object.keys(strObject).length === Object.keys(strObject2).length;
+
 }
-
-class LinkedList {
-  constructor() {
-    this.head = null;
-  }
-
-  append(value) {
-    const newNode = new Node(value);
-    if (!this.head) {
-      this.head = newNode;
-    } else {
-      let current = this.head;
-      while (current.next) {
-        current = current.next;
-      }
-      current.next = newNode;
-    }
-  }
-
-  prepend(value) {
-    const newNode = new Node(value);
-    newNode.next = this.head;
-    this.head = newNode;
-  }
-
-  delete(value) {
-    if (!this.head) {
-      return;
-    }
-    if (this.head.value === value) {
-      this.head = this.head.next;
-      return;
-    }
-    let current = this.head;
-    while (current.next) {
-      if (current.next.value === value) {
-        current.next = current.next.next;
-        return;
-      }
-      current = current.next;
-    }
-  }
-
-  find(value) {
-    let current = this.head;
-    while (current) {
-      if (current.value === value) {
-        return current;
-      }
-      current = current.next;
-    }
-    return null;
-  }
-
-  toArray() {
-    const result = [];
-    let current = this.head;
-    while (current) {
-      result.push(current.value);
-      current = current.next;
-    }
-    return result;
-  }
-
-  size() {
-    let count = 0;
-    let current = this.head;
-    while (current) {
-      count++;
-      current = current.next;
-    }
-    return count;
-  }
-}
-
-// Example usage:
-const list = new LinkedList();
-list.append(1);
-list.append(2);
-list.prepend(0);
-list.append(3);
-list.delete(2);
-console.log(list.toArray()); // Output: [0, 1, 3]
-console.log(list.size());   // Output: 3
