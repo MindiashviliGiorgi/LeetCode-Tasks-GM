@@ -543,41 +543,124 @@
 
 // #22 Anagram Check(medium)
 
-console.log(areAnagrams("listen", "silent")); // Output: true
-console.log(areAnagrams("hello", "world"));   // Output: false
+// console.log(areAnagrams("listen", "silent")); // Output: true
+// console.log(areAnagrams("hello", "world"));   // Output: false
 
-function areAnagrams(str, str2) {
-  // create two empty object for strings
-  let strObject = {};
-  let strObject2 = {};
+// function areAnagrams(str, str2) {
+//   // create two empty object for strings
+//   let strObject = {};
+//   let strObject2 = {};
 
 
-  // function to populate the character count objects
-  function populateCharCount(str, strObject) {
-    for (let char of str) {
-      char = char.toLowerCase();
-      if (char !== ' ') {
-        strObject[char] = (strObject[char] || 0) + 1;
-      }
-    }
+//   // function to populate the character count objects
+//   function populateCharCount(str, strObject) {
+//     for (let char of str) {
+//       char = char.toLowerCase();
+//       if (char !== ' ') {
+//         strObject[char] = (strObject[char] || 0) + 1;
+//       }
+//     }
+//   }
+
+//   // Populate character count objects for strings
+//   populateCharCount(str, strObject);
+//   populateCharCount(str2, strObject2);
+
+//   // check objects if have same properties
+//   for (let char in strObject) {
+//     if (strObject.hasOwnProperty(char) && strObject2.hasOwnProperty(char)) {
+//       if (strObject[char] !== strObject2[char]) {
+//         return false;
+//       } else {
+//         return true;
+//       }
+//     }
+//   }
+
+//   // one more check if object propertys have same length
+//   return Object.keys(strObject).length === Object.keys(strObject2).length;
+
+// }
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+// #23 Sudoku Solver (Hard)
+
+const sudokuBoard = [
+  ["5", "3", ".", ".", "7", ".", ".", ".", "."],
+  ["6", ".", ".", "1", "9", "5", ".", ".", "."],
+  [".", "9", "8", ".", ".", ".", ".", "6", "."],
+  ["8", ".", ".", ".", "6", ".", ".", ".", "3"],
+  ["4", ".", ".", "8", ".", "3", ".", ".", "1"],
+  ["7", ".", ".", ".", "2", ".", ".", ".", "6"],
+  [".", "6", ".", ".", ".", ".", "2", "8", "."],
+  [".", ".", ".", "4", "1", "9", ".", ".", "5"],
+  [".", ".", ".", ".", "8", ".", ".", "7", "9"]
+];
+
+solveSudoku(sudokuBoard);
+
+
+function solveSudoku(board) {
+  if (solve(0, 0)) {
+    return board;
   }
 
-  // Populate character count objects for strings
-  populateCharCount(str, strObject);
-  populateCharCount(str2, strObject2);
+  return null;
 
-  // check objects if have same properties
-  for (let char in strObject) {
-    if (strObject.hasOwnProperty(char) && strObject2.hasOwnProperty(char)) {
-      if (strObject[char] !== strObject2[char]) {
-        return false;
-      } else {
-        return true;
+  function solve(row, col) {
+    if (row === 9) {
+      return true; // All rows are complete
+    }
+    if (col === 9) {
+      return solve(row + 1, 0); // Move to the next row
+    }
+    if (board[row][col] !== ".") {
+      return solve(row, col + 1); // Skip filled cells
+    }
+
+    for (let num = 1; num <= 9; num++) {
+      const numStr = num.toString();
+      if (isValidPlacement(row, col, numStr)) {
+        board[row][col] = numStr;
+
+        if (solve(row, col + 1)) {
+          return true;
+        }
+
+        board[row][col] = ".";
       }
     }
+
+    return false; // No valid placement for this cell
   }
 
-  // one more check if object propertys have same length
-  return Object.keys(strObject).length === Object.keys(strObject2).length;
+  function isValidPlacement(row, col, num) {
+    for (let i = 0; i < 9; i++) {
+      if (board[row][i] === num || board[i][col] === num) {
+        return false; // Check row and column
+      }
+    }
 
+    const boxRow = Math.floor(row / 3) * 3;
+    const boxCol = Math.floor(col / 3) * 3;
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 3; j++) {
+        if (board[boxRow + i][boxCol + j] === num) {
+          return false; // Check 3x3 box
+        }
+      }
+    }
+
+    return true;
+  }
+}
+
+if (solvedSudoku) {
+  console.log("Solved Sudoku:");
+  for (const row of solvedSudoku) {
+    console.log(row.join(" "));
+  }
+} else {
+  console.log("No solution exists.");
 }
