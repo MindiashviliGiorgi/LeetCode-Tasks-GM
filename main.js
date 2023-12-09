@@ -586,81 +586,81 @@
 
 // #23 Sudoku Solver (Hard)
 
-const sudokuBoard = [
-  ["5", "3", ".", ".", "7", ".", ".", ".", "."],
-  ["6", ".", ".", "1", "9", "5", ".", ".", "."],
-  [".", "9", "8", ".", ".", ".", ".", "6", "."],
-  ["8", ".", ".", ".", "6", ".", ".", ".", "3"],
-  ["4", ".", ".", "8", ".", "3", ".", ".", "1"],
-  ["7", ".", ".", ".", "2", ".", ".", ".", "6"],
-  [".", "6", ".", ".", ".", ".", "2", "8", "."],
-  [".", ".", ".", "4", "1", "9", ".", ".", "5"],
-  [".", ".", ".", ".", "8", ".", ".", "7", "9"]
-];
+// const sudokuBoard = [
+//   ["5", "3", ".", ".", "7", ".", ".", ".", "."],
+//   ["6", ".", ".", "1", "9", "5", ".", ".", "."],
+//   [".", "9", "8", ".", ".", ".", ".", "6", "."],
+//   ["8", ".", ".", ".", "6", ".", ".", ".", "3"],
+//   ["4", ".", ".", "8", ".", "3", ".", ".", "1"],
+//   ["7", ".", ".", ".", "2", ".", ".", ".", "6"],
+//   [".", "6", ".", ".", ".", ".", "2", "8", "."],
+//   [".", ".", ".", "4", "1", "9", ".", ".", "5"],
+//   [".", ".", ".", ".", "8", ".", ".", "7", "9"]
+// ];
 
-solveSudoku(sudokuBoard);
+// solveSudoku(sudokuBoard);
 
 
-function solveSudoku(board) {
-  if (solve(0, 0)) {
-    return board;
-  }
+// function solveSudoku(board) {
+//   if (solve(0, 0)) {
+//     return board;
+//   }
 
-  return null;
+//   return null;
 
-  function solve(row, col) {
-    if (row === 9) {
-      return true; // All rows are complete
-    }
-    if (col === 9) {
-      return solve(row + 1, 0); // Move to the next row
-    }
-    if (board[row][col] !== ".") {
-      return solve(row, col + 1); // Skip filled cells
-    }
+//   function solve(row, col) {
+//     if (row === 9) {
+//       return true; // All rows are complete
+//     }
+//     if (col === 9) {
+//       return solve(row + 1, 0); // Move to the next row
+//     }
+//     if (board[row][col] !== ".") {
+//       return solve(row, col + 1); // Skip filled cells
+//     }
 
-    for (let num = 1; num <= 9; num++) {
-      const numStr = num.toString();
-      if (isValidPlacement(row, col, numStr)) {
-        board[row][col] = numStr;
+//     for (let num = 1; num <= 9; num++) {
+//       const numStr = num.toString();
+//       if (isValidPlacement(row, col, numStr)) {
+//         board[row][col] = numStr;
 
-        if (solve(row, col + 1)) {
-          return true;
-        }
+//         if (solve(row, col + 1)) {
+//           return true;
+//         }
 
-        board[row][col] = ".";
-      }
-    }
+//         board[row][col] = ".";
+//       }
+//     }
 
-    return false; // No valid placement for this cell
-  }
+//     return false; // No valid placement for this cell
+//   }
 
-  function isValidPlacement(row, col, num) {
-    for (let i = 0; i < 9; i++) {
-      if (board[row][i] === num || board[i][col] === num) {
-        return false; // Check row and column
-      }
-    }
+//   function isValidPlacement(row, col, num) {
+//     for (let i = 0; i < 9; i++) {
+//       if (board[row][i] === num || board[i][col] === num) {
+//         return false; // Check row and column
+//       }
+//     }
 
-    const boxRow = Math.floor(row / 3) * 3;
-    const boxCol = Math.floor(col / 3) * 3;
-    for (let i = 0; i < 3; i++) {
-      for (let j = 0; j < 3; j++) {
-        if (board[boxRow + i][boxCol + j] === num) {
-          return false; // Check 3x3 box
-        }
-      }
-    }
+//     const boxRow = Math.floor(row / 3) * 3;
+//     const boxCol = Math.floor(col / 3) * 3;
+//     for (let i = 0; i < 3; i++) {
+//       for (let j = 0; j < 3; j++) {
+//         if (board[boxRow + i][boxCol + j] === num) {
+//           return false; // Check 3x3 box
+//         }
+//       }
+//     }
 
-    return true;
-  }
-}
+//     return true;
+//   }
+// }
 
-if (solvedSudoku) {
-  console.log("Solved Sudoku:");
-  for (const row of solvedSudoku) {
-    console.log(row.join(" "));
-  }
-} else {
-  console.log("No solution exists.");
-}
+// if (solvedSudoku) {
+//   console.log("Solved Sudoku:");
+//   for (const row of solvedSudoku) {
+//     console.log(row.join(" "));
+//   }
+// } else {
+//   console.log("No solution exists.");
+// }
