@@ -169,8 +169,8 @@
 
 //  #5 Two sum (medium)
 
-const nums = [2, 7, 11, 15];
-const target = 9;
+// const nums = [2, 7, 11, 15];
+// const target = 9;
 // console.log(twoSum(nums, target));
 
 // function twoSum(nums, target) {
@@ -240,5 +240,182 @@ const target = 9;
 
 //   return maxLength;
 // }
+
+
+// let k = 0;
+
+// do {
+//   console.log(k);
+//   k++;
+// } while (k > 1);
+
+
+// function Currying
+
+// function multiply(a, b) {
+//   return a * b;
+// }
+
+// function curriedMultiply(a) {
+//   return function (b) {
+//     return a * b;
+//   };
+// }
+
+// const double = curriedMultiply(2)
+// console.log(double(5))
+
+// const triple = curriedMultiply(3);
+// console.log(triple(5))
+
+//  call, apply and bind
+let person = {
+  name : "Giorgi"
+}
+
+function sayHello(message) {
+  // console.log(`${message}, ${this.name}`)
+}
+
+// call
+sayHello.call(person, 'Hello')
+
+// apply
+sayHello.apply(person, ['Hi'])
+
+const res = sayHello.bind(person);
+res('Gaumarjos')
+
+// String
+
+let str1 = 'Hello';
+let str2 = 'World';
+let result = str1 + ' ' + str2;
+
+// concat 
+result = str1.concat(" ", str2)
+
+// substring
+let subs = result.substring(0, 3);
+
+// split
+let splittedResult = result.split(' ');
+
+// replace
+let repl = result.replace("World", "Georgia");
+
+// trim 
+let trimStr = "  Giorgi   ";
+
+// string immutability
+// string are immutable if we change value memory adress will be changed
+
+// Concatenate strings
+
+// let s1 = 'Hello';
+// let s2 = 'World';
+
+// + operator, contact() method, template literals ${}, 
+// join ()
+// let stringsArray = [s1, s2];
+// let s3 = stringsArray.join(' ');
+
+////////////////////////////
+
+// DOM ? difference HTML and DOM
+// Document Object Model
+
+// selectors
+// document.getElementById();
+// document.getElementsByClassName();
+// document.getElementsByTagName();
+// document.querySelector();
+// document.querySelectorAll();
+
+// querySelector return first className if we have more than one
+
+// innerHTML and textContent
+// innerHTML return only inside p tag text
+// textContent return <p>text</p>
+
+// createElement cloneNode
+// create div
+// let newDiv = document.createElement('div');
+// newDiv.textContent = 'New Div in HTML';
+// add this div in body
+// document.body.appendChild(newDiv)
+
+// cloneNode()
+// let existingElement = document.getElementById('element');
+// let clonedElement = existingElement.cloneNode(true);
+// clonedElement.textContent = 'Giorgi';
+// document.body.appendChild(clonedElement)
+
+// createTextNode()
+// catch element
+// let parentElement = document.getElementById('id');
+// create text
+// let newText = document.createTextNode('This is what it is');
+// Append
+// parentElement.appendChild(newText);
+
+// Error handling
+
+// try {
+//   const result = somethingVar + 10;
+//   console.log(result)
+// } catch (error) {
+//   console.log('Error: ', error.message)
+// }
+// finally {
+//   console.log('Finally executed')
+// }
+
+// Type of Error
+
+// typeError console.log('Girogi'
+// ReferenceError console.log(somethingUndefinedVariable)
+// typeError let num = 1; num.toUpperCase(); 
+// rangeError const arr = [1, 2] console.log(arr[10])
+
+// Objects create ways
+// Object Literal
+const user = {
+  firstName : 'Giorgi',
+  lastName : 'Mindiashvili'
+}
+
+// Object constructor
+var user2 = new Object();
+user2.name = 'Lasha';
+user2.age = 19;
+
+// Object.create() method
+var userParent = {
+  name : '',
+  age : 0
+}
+var man = Object.create(userParent);
+man.name = 'Zurab';
+man.age = 47;
+
+// Difference Array and Object
+
+// Array are collections of values; []
+// Objects are collections of key-value pairs; {}
+
+// in array elements are ordered they have indexes 0, 1, 2
+// in object propertys are unordered
+
+// add, modify and delete
+const player = {};
+// add
+player.name = "Giorgi";
+player.age = 23;
+// modify
+player.age = 19;
+// delete
+delete player.age;
+
 
 
