@@ -171,18 +171,74 @@
 
 const nums = [2, 7, 11, 15];
 const target = 9;
-console.log(twoSum(nums, target));
+// console.log(twoSum(nums, target));
 
-function twoSum(nums, target) {
-  const numToIndexMap = {};
+// function twoSum(nums, target) {
+//   const numToIndexMap = {};
 
-  for (let i = 0; i < nums.length; i++) {
-    const complement = target - nums[i]
+//   for (let i = 0; i < nums.length; i++) {
+//     const complement = target - nums[i]
 
-    if (numToIndexMap.hasOwnProperty(complement)) {
-      return [numToIndexMap[complement], i]
-    }
-    numToIndexMap[nums[i]] = i;
-  }
-  return null
-}
+//     if (numToIndexMap.hasOwnProperty(complement)) {
+//       return [numToIndexMap[complement], i]
+//     }
+//     numToIndexMap[nums[i]] = i;
+//   }
+//   return null
+// }
+
+// better way for twoSum
+
+// function twoSum(nums, target) {
+//   let map = new Map();
+//   for (let i = 0; i < nums.length; i++) {
+//     let num1 = nums[i];
+//     let num2 = target - num1;
+//     if (map.has(num2)) {
+//       return [i, map.get(num2)];
+//     }
+//     map.set(num1, i);
+//   }
+// }
+
+// another explain
+
+// function twoSum(nums, target) {
+//   for (let i = 0; i < nums.length; i++) {
+//     for (let j = i + 1; j < nums.length; j++) {
+//       if (nums[i] + nums[j] === target) {
+//         return [i, j]
+//       }
+//     }
+//   }
+// }
+
+
+// #6  Longest Substring Without Repeating Characters (medium)
+
+// console.log(lengthOfLongestSubstring("abcabcbb")); // Output: 3 (the longest substring without repeating characters is "abc")
+// console.log(lengthOfLongestSubstring("bbbbb")); // Output: 1 (the longest substring without repeating characters is "b")
+// console.log(lengthOfLongestSubstring("pwwkew")); // Output: 3 (the longest substring without repeating characters is "wke")
+
+
+// function lengthOfLongestSubstring(str) {
+//   if(str.length === 0) return 0;
+
+//   let maxLength = 0;
+//   let start = 0;
+//   const charIndexMap = {};
+
+//   for(let i = 0; i < str.length; i++) {
+//     const currentChar = str[i]
+
+//     if(charIndexMap.hasOwnProperty(currentChar) && charIndexMap[currentChar] >= start) {
+//       start = charIndexMap[currentChar] + 1;
+//     }
+//     charIndexMap[currentChar] = i;
+//     maxLength = Math.max(maxLength, i - start + 1)
+//   }
+
+//   return maxLength;
+// }
+
+
