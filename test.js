@@ -35,14 +35,20 @@
 // let str = "Hello, World"; // Output: "!dlroW ,olleH"
 // let str2 = "JavaScript"; // Output: "tpircSavaJ"
 
-// function reverseString(s) {
-//   let strArray;
-//   strArray = s.split('').reverse().join('')
-//   return strArray;
-// }
+// // function reverseString(s) {
+// //   let strArray;
+// //   strArray = s.split('').reverse().join('')
+// //   return strArray;
+// // }
+
+//   function reverseString(str) {
+//     let strArray;
+//     strArray = str.split('').reverse().join('');
+//     return strArray;
+//   }
 
 // console.log(reverseString(str))
-// console.log(reverseString(str2))              +
+// console.log(reverseString(str2))
 
 //////////////////////////////////////////////////
 
@@ -61,7 +67,17 @@
 
 // const nums = [2, 7, 11, 15];
 // const target = 9;
-// console.log(twoSum(nums, target)); // Output: [1, 2] (indices of elements 2 and 7)
+// console.log(twoSum(nums, target)); // Output: [0, 1] (indices of elements 2 and 7)
+
+// function twoSum(nums, target) {
+//   for (let i = 0; i < nums.length; i++) {
+//     for (let j = i + 1; j < nums.length; j++) {
+//       if (nums[i] + nums[j] === target) {
+//         return [i, j]
+//       }
+//     }
+//   }
+// }
 
 // function twoSum(nums, target) {
 //   const numToIndexMap = {};
@@ -269,43 +285,43 @@
 // console.log(triple(5))
 
 //  call, apply and bind
-let person = {
-  name : "Giorgi"
-}
+// let person = {
+//   name : "Giorgi"
+// }
 
-function sayHello(message) {
-  // console.log(`${message}, ${this.name}`)
-}
+// function sayHello(message) {
+//   // console.log(`${message}, ${this.name}`)
+// }
 
-// call
-sayHello.call(person, 'Hello')
+// // call
+// sayHello.call(person, 'Hello')
 
-// apply
-sayHello.apply(person, ['Hi'])
+// // apply
+// sayHello.apply(person, ['Hi'])
 
-const res = sayHello.bind(person);
-res('Gaumarjos')
+// const res = sayHello.bind(person);
+// res('Gaumarjos')
 
-// String
+// // String
 
-let str1 = 'Hello';
-let str2 = 'World';
-let result = str1 + ' ' + str2;
+// let str1 = 'Hello';
+// let str2 = 'World';
+// let result = str1 + ' ' + str2;
 
-// concat 
-result = str1.concat(" ", str2)
+// // concat 
+// result = str1.concat(" ", str2)
 
-// substring
-let subs = result.substring(0, 3);
+// // substring
+// let subs = result.substring(0, 3);
 
-// split
-let splittedResult = result.split(' ');
+// // split
+// let splittedResult = result.split(' ');
 
-// replace
-let repl = result.replace("World", "Georgia");
+// // replace
+// let repl = result.replace("World", "Georgia");
 
-// trim 
-let trimStr = "  Giorgi   ";
+// // trim 
+// let trimStr = "  Giorgi   ";
 
 // string immutability
 // string are immutable if we change value memory adress will be changed
@@ -380,24 +396,24 @@ let trimStr = "  Giorgi   ";
 
 // Objects create ways
 // Object Literal
-const user = {
-  firstName : 'Giorgi',
-  lastName : 'Mindiashvili'
-}
+// const user = {
+//   firstName : 'Giorgi',
+//   lastName : 'Mindiashvili'
+// }
 
-// Object constructor
-var user2 = new Object();
-user2.name = 'Lasha';
-user2.age = 19;
+// // Object constructor
+// var user2 = new Object();
+// user2.name = 'Lasha';
+// user2.age = 19;
 
-// Object.create() method
-var userParent = {
-  name : '',
-  age : 0
-}
-var man = Object.create(userParent);
-man.name = 'Zurab';
-man.age = 47;
+// // Object.create() method
+// var userParent = {
+//   name : '',
+//   age : 0
+// }
+// var man = Object.create(userParent);
+// man.name = 'Zurab';
+// man.age = 47;
 
 // Difference Array and Object
 
@@ -408,20 +424,20 @@ man.age = 47;
 // in object propertys are unordered
 
 // add, modify and delete
-const player = {};
-// add
-player.name = "Giorgi";
-player.age = 23;
-// modify
-player.age = 19;
-// delete
-delete player.age;
+// const player = {};
+// // add
+// player.name = "Giorgi";
+// player.age = 23;
+// // modify
+// player.age = 19;
+// // delete
+// delete player.age;
 
-// iterate | for...in | Object.keys() & forEach() | Object.values() & for Each()
-const dog = {
-  name : "Sanjo",
-  age : 1
-}
+// // iterate | for...in | Object.keys() & forEach() | Object.values() & for Each()
+// const dog = {
+//   name : "Sanjo",
+//   age : 1
+// }
 // for in
 // for (let prop in dog) {
 //   console.log(prop + " : " + dog[prop])
@@ -436,15 +452,33 @@ const dog = {
 // })
 
 // 53. Maximum SubArray(easy)
-const nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+// const nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
 
-function maxSubArray(nums) {
-  let solution = nums[0]
-  for (let i = 1; i < nums.length; i++) {
-    nums[i] = Math.max(nums[i], nums[i] + nums[i-1])
-    solution = Math.max(solution, nums[i])
-  }
-  return solution;
-}
+// function maxSubArray(nums) {
+//   let solution = nums[0]
+//   for (let i = 1; i < nums.length; i++) {
+//     nums[i] = Math.max(nums[i], nums[i] + nums[i-1])
+//     solution = Math.max(solution, nums[i])
+//   }
+//   return solution;
+// }
 
-console.log(maxSubArray(nums)) // 6
+// console.log(maxSubArray(nums)) // 6
+
+
+
+
+// let arr1 = [1, 2, 3, 5];
+// let arr2 = [1, 2, 3, 5];
+
+// function myFoo() {
+//   for (let i = 0; i < arr1.length; i++) {
+//     if (!arr2.includes(arr1[i])) {
+//       return "its not same"
+//     }
+//   }
+//   return "its same"
+// }
+
+// console.log(myFoo())
+
