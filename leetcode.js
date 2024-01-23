@@ -56,3 +56,39 @@
 // console.log("increment: " + counter.increment())
 // console.log("decrement: " + counter.decrement())
 // console.log("reset: " + counter.reset())
+
+
+// 4 Apply Transform Over Each Element in Array
+
+// const numsArray = [1, 2, 3, 4]; // out: [2, 3, 4, 5]
+
+// function returnedArray(arr) {
+//   let newArray = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     newArray.push(arr[i] + 1);
+//   }
+//   return newArray;
+// }
+
+// const resultArray = returnedArray(numsArray);
+// console.log(resultArray);
+
+
+// 5 Filter Elements from Array
+
+// input 0, 10, 20, 30 , 40; output 20, 30, 40
+
+// const numsArray = [0, 10, 20, 30, 40];
+
+// function filterArray(arr) {
+//   const newArray = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > 10) {
+//       newArray.push(arr[i])
+//     }
+//   }
+//   return newArray;
+// }
+
+// console.log(filterArray(numsArray))
+
